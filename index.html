@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Trivia</title>
+</head>
+<body>
+    <div id="background">
+    <h1>Futbol Trivia</h1>
+    <form id ="trivia" name ="trivia">
+    <p>Who won La Liga Title in 2018</p>
+    <input id ="futbol" type ="text" name= "question1">
+    
+
+    <p>Who is the head coach of Real Madrid?</p>
+    <input id ="realMadrid" type ="text" name ="question2">
+
+    <p>Which team is most likely to win the 2018 Champions League Final</p>
+    <input id ="team" type ="text" name ="question3">
+
+    <input id="button" type="button" value="Submit" onclick = "check()">
+
+    
+
+
+    </form>
+    <div id = "postSubmit">
+    <p id = "correctAnswers"></p>  
+    </div>  
+    </div>
+
+<script type ="text/javascript">
+function check() {
+
+var question1 = document.trivia.question1.value;
+var question2 = document.trivia.question2.value;
+var question3 = document.trivia.question3.value;
+var correct = 0;
+
+if (question1 == "FC Barcelona") {
+    correct++;
+}
+if (question2 == "Zinedine Zidane"){
+    correct++;
+}
+if (question3 == "Real Madrid") {
+    correct++;
+}
+
+document.getElementById("postSubmit").style.visibility ="visible";
+document.getElementById("correctAnswers").innerHTML = "You answered " + correct + " correct.";
+}
+</script>
+</body>
+</html>
